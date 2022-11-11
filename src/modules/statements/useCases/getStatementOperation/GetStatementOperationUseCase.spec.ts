@@ -49,8 +49,8 @@ describe("Get Statements", ()=>{
 
 
 
-    it("should not be able to get a statement of an invalid user", ()=>{
-        expect(async ()=>{
+    it("should not be able to get a statement of an invalid user", async()=>{
+        await expect(async ()=>{
            const user =  await createUserUseCase.execute({
                 name:"Darcio Santos", email:"test@finapi.com.br", password:"senha123"} 
             );
@@ -69,8 +69,8 @@ describe("Get Statements", ()=>{
     });
 
 
-    it("should not be able to get a statement with an invalid id", ()=>{
-        expect(async ()=>{
+    it("should not be able to get a statement with an invalid id", async ()=>{
+        await expect(async ()=>{
            const user =  await createUserUseCase.execute({
                 name:"Darcio Santos", email:"test@finapi.com.br", password:"senha123"} 
             );

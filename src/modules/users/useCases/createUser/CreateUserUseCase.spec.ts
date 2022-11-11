@@ -25,7 +25,7 @@ describe("User Creations", ()=>{
 
     it("should not be able to create a new user with another existing user's  email", async () => {
 
-        expect(async()=>{
+        await expect(async()=>{
             await createUserUseCase.execute({
             name:"Darcio Santos", email:"test@finapi.com.br", password:"senha123"} 
             );

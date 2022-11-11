@@ -33,8 +33,8 @@ describe("User Authentication", ()=>{
 
     })
 
-    it("should not be able to authenticate an user with a non existing email",()=>{
-        expect(async()=>{
+    it("should not be able to authenticate an user with a non existing email",async ()=>{
+        await expect(async()=>{
             const email = "test@finapi.com.br";
             const password = "senha123"
             await createUserUseCase.execute({
@@ -46,8 +46,8 @@ describe("User Authentication", ()=>{
             }).rejects.toBeInstanceOf(IncorrectEmailOrPasswordError)
     })
 
-    it("should not be able to authenticate an user with a wrong password",()=>{
-        expect(async()=>{
+    it("should not be able to authenticate an user with a wrong password",async ()=>{
+       await expect(async()=>{
             const email = "test@finapi.com.br";
             const password = "senha123"
             await createUserUseCase.execute({

@@ -42,7 +42,7 @@ describe("Balance", ()=>{
     });
 
     it("should not be able to get user balance for an invalid user",async ()=>{
-        expect(async ()=>{
+        await expect(async ()=>{
            const user =  await createUserUseCase.execute({
                 name:"Darcio Santos", email:"test@finapi.com.br", password:"senha123"} 
             );
