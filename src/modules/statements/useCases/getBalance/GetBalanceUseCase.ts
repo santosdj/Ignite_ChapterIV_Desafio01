@@ -35,6 +35,7 @@ export class GetBalanceUseCase {
       user_id,
       with_statement: true
     });
+    console.log(balance)
 
     return balance as IResponse;
   }

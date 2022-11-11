@@ -22,7 +22,8 @@ export class CreateStatementController {
       user_id,
       type,
       amount,
-      description
+      description,
+      sender_id:undefined
     });
 
     return response.status(201).json(statement);

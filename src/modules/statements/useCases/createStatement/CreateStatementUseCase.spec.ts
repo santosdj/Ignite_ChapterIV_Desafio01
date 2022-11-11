@@ -42,8 +42,8 @@ describe("Create Statements", ()=>{
     });
 
 
-    it("should not be able to create a statement to an invalid user", ()=>{
-        expect(async ()=>{
+    it("should not be able to create a statement to an invalid user", async ()=>{
+       await expect(async ()=>{
             await createUserUseCase.execute({
                 name:"Darcio Santos", email:"test@finapi.com.br", password:"senha123"} 
             );
@@ -58,8 +58,8 @@ describe("Create Statements", ()=>{
     });
 
 
-    it("should not be able to create a statement for an user without funds", ()=>{
-        expect(async ()=>{
+    it("should not be able to create a statement for an user without funds", async ()=>{
+       await expect(async ()=>{
            const user =  await createUserUseCase.execute({
                 name:"Darcio Santos", email:"test@finapi.com.br", password:"senha123"} 
             );
